@@ -43,7 +43,7 @@ class FxDealServiceImplTest {
                 "Invalid deal: 'fromCurrency' and 'toCurrency' must be different. Both were '%s'.", invalidCurrency);
 
         final FxDealRequestDto request = new FxDealRequestDto(
-                1L, invalidCurrency, invalidCurrency, BigDecimal.TEN
+                "deal-001", invalidCurrency, invalidCurrency, BigDecimal.TEN
         );
 
         willThrow(new InvalidCurrencyException(exceptionMessage))
@@ -58,7 +58,7 @@ class FxDealServiceImplTest {
     @Test
     void givenExistingDealId_whenSave_thenThrowDealAlreadyExistException() {
         final FxDealRequestDto request = new FxDealRequestDto(
-                2L, "USD", "EUR", BigDecimal.valueOf(1000)
+                "deal-002", "USD", "EUR", BigDecimal.valueOf(1000)
         );
 
         given(fxDealRepository.existsById(request.id()))
@@ -72,7 +72,7 @@ class FxDealServiceImplTest {
     @Test
     void givenValidRequest_whenSave_thenReturnFxDealResponseDto() {
         final FxDealRequestDto request = new FxDealRequestDto(
-                3L, "USD", "MAD", BigDecimal.valueOf(2500)
+                "deal-003", "USD", "MAD", BigDecimal.valueOf(2500)
         );
 
         final FxDealEntity entity = new FxDealEntity(
