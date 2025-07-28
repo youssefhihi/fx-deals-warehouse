@@ -24,7 +24,6 @@ services:
       - "5432:5432"
     volumes:
       - db_data:/var/lib/postgresql/data
-    command: [ "postgres", "-p", "5432" ]
 
 volumes:
   db_data:

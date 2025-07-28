@@ -1,13 +1,14 @@
 package com.progressoft.fxDeal.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 
 import java.math.BigDecimal;
 
 public record FxDealRequestDto (
-        @NotNull(message = "Deal ID is required")
-        Long id,
+        @NotBlank(message = "Deal ID is required")
+        String id,
 
         @NotNull(message = "From currency is required")
         String fromCurrency,

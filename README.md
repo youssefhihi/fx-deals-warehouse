@@ -90,9 +90,9 @@ This starts the Spring Boot app and PostgreSQL DB using Docker Compose.
 
 - **Database**: PostgreSQL
 - **Table**: `fx_deals` table with columns:
-    - `id` (Long, PK)
+    - `id` (String, PK)
     - `from_currency` (String, 3 chars)
-    - `to_currency` (String, 3 chars)
+      - `to_currency` (String, 3 chars)
     - `deal_timestamp` (LocalDateTime)
     - `amount` (BigDecimal)
 - **JPA**: Spring Data JPA with auditing for timestamp

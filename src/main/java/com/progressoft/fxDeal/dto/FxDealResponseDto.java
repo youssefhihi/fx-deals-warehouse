@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public record FxDealResponseDto(
-         Long id,
+         String id,
          String fromCurrency,
          String toCurrency,
          LocalDateTime dealTimestamp,
